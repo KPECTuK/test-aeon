@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScreensFsm : MonoBehaviour, IResolver, IInputState
+public class ScreensFsm : MonoBehaviour, IProvider
 {
 	public const double TRANSITION_TIME_DEFAULT_SEC = 0.3;
+	public const double GAME_MAX_TIME_F = 3.0;
 
 	[SerializeField]
 	private ScreenMain _scrMain;
@@ -21,22 +22,54 @@ public class ScreensFsm : MonoBehaviour, IResolver, IInputState
 	private IEnumerator _transition;
 	private ISensor[] _neighbors;
 
-	private bool _pressEsc;
-
 	private Dictionary<Type, object> _repo;
 
 	public T Get<T>() where T : class
 	{
-		return _repo.TryGetValue(typeof(T), out var result)
-			? result as T
-			: throw new Exception($"type not found: {typeof(T)}");
+		T result = null;
+		if(_repo.TryGetValue(typeof(T), out var @object))
+		{
+			if(@object is IProvider cast)
+			{
+				result = cast.Get<T>();
+			}
+			
+			if(result == null)
+			{
+				result = @object as T;
+			}
+		}
+
+		if(result == null)
+		{
+			throw new Exception($"type is not found: {typeof(T)}");
+		}
+
+		return result;
 	}
 
 	private void Awake()
 	{
+		// topmost (all got initialized)
+
+		var providerInput = new InputProvider();
 		_repo = new Dictionary<Type, object>
 		{
-			{ typeof(IInputState), this },
+			{ typeof(IInput), providerInput },
+			{ typeof(InputProvider), providerInput },
+			//
+			{ typeof(GameModeResetPosition), new GameModeResetPosition() },
+			{ typeof(GameModeResetControl), new GameModeResetControl() },
+			{ typeof(GameModeMain), new GameModeMain() },
+			{ typeof(GameModeInertia), new GameModeInertia() },
+			{ typeof(GameModeFalling), new GameModeFalling() },
+			{ typeof(GameModeUI), new GameModeUI() },
+			//
+			{ typeof(GameController), new GameController() },
+			{ typeof(GameCharacter), new ProviderCache<GameCharacter>() },
+			{ typeof(GameTrack), new ProviderCache<GameTrack>() },
+			{ typeof(GameCamera), new ProviderCache<GameCamera>() },
+			//
 			{ typeof(ScreenMain), _scrMain },
 			{ typeof(ScreenScorePrevious), _scrScorePrevious },
 			{ typeof(ScreenScoreWin), _scrScoreWin },
@@ -57,10 +90,15 @@ public class ScreensFsm : MonoBehaviour, IResolver, IInputState
 			new SensorMainToGame(),
 			new SensorMainToScore(),
 		};
+
+		providerInput.SetUI();
+		Get<GameController>().PushMode<GameModeUI>(this);
 	}
 
 	private void Update()
 	{
+		Get<GameController>().Update(this);
+
 		if(_transition?.MoveNext() ?? false)
 		{
 			return;
@@ -73,31 +111,10 @@ public class ScreensFsm : MonoBehaviour, IResolver, IInputState
 			if(_neighbors[index].Check(this))
 			{
 				_transition = _neighbors[index].GetNextTransition(this);
-				_neighbors = _neighbors[index].GetNextSensors();
+				_neighbors = _neighbors[index].GetNextSensors(this);
 
 				break;
 			}
 		}
-	}
-
-	public bool CheckARSButtonToGame()
-	{
-		return _scrMain.GetARSButtonValGame();
-	}
-
-	public bool CheckARSButtonToScore()
-	{
-		return _scrMain.GetARSButtonValScore();
-	}
-
-	public bool IsEscPress()
-	{
-		// TODO: scan input depending on state -> separate input
-
-		_pressEsc = Input.GetKey(KeyCode.Escape);
-
-		var result = _pressEsc;
-		_pressEsc = false;
-		return result;
 	}
 }

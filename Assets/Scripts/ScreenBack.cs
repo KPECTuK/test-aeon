@@ -9,11 +9,6 @@ public class ScreenBack : MonoBehaviour, IScreen
 	[SerializeField]
 	private CanvasGroup _target;
 
-	public IEnumerable<ISensor> GetExitSensors()
-	{
-		return new ISensor[] { };
-	}
-
 	public IEnumerator GetFadeIn(TimeSpan duration)
 	{
 		return _target.GetCoroutineAlphaFadeIn((float)duration.TotalSeconds);
