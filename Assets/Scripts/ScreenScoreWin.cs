@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Modules.Engine.Runtime.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +12,7 @@ public class ScreenScoreWin : MonoBehaviour, IScreen
 
 	public void SetText(TimeSpan duration)
 	{
-		_text.text = $"Вы потратили {(int)duration.TotalSeconds} сек";
+		_text.text = $"Time had been spent: {duration.TotalSeconds:###.##} seconds";
 	}
 
 	public IEnumerator GetFadeIn(TimeSpan duration)

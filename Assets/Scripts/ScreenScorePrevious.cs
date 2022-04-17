@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Modules.Engine.Runtime.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,15 +21,14 @@ public class ScreenScorePrevious : MonoBehaviour, IScreen
 			{
 				while(enRows.MoveNext())
 				{
-					enRows.Current.text = enResults.MoveNext() 
-						? new StringBuilder("Игра ")
-							.Append(enResults.Current.Result ? "<color=lime>выиграна</color>" : "<color=orange>проиграна</color>")
-							.Append(", потрачено: ")
+					enRows.Current.text = enResults.MoveNext()
+						? new StringBuilder("Got ")
+							.Append(enResults.Current.Result ? "<color=lime>Win</color>" : "<color=orange>Lost</color>")
+							.Append(" the game, ")
 							.Append(enResults.Current.Duration.TotalSeconds.ToString("##.##"))
-							.Append(" сек")
+							.Append(" seconds, had been spent on it.")
 							.ToString()
-						
-						: "";
+						: string.Empty;
 				}
 			}
 		}

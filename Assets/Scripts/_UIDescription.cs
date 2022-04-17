@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 
-// ! all intended to be stateless
+// UI FSM graph description
+
+// ! all intended to be stateless,
 
 // ! link: Main <> Game
 
@@ -32,9 +34,9 @@ public class SensorMainToGame : ISensor
 		var controller = provider.Get<GameController>();
 		controller.DropAllModes();
 		controller.PushMode<GameModeUI>(provider);
-		controller.PushMode<GameModeResetControl>(provider);
-		controller.PushMode<GameModeMain>(provider);
-		controller.PushMode<GameModeResetPosition>(provider);
+		controller.PushMode<GameModeSelectFinish>(provider);
+		controller.PushMode<GameModeDriveChar>(provider);
+		controller.PushMode<GameModeResetChar>(provider);
 		controller.SetGameStart();
 	}
 
@@ -112,7 +114,7 @@ public class SensorWinToMain : ISensor
 
 public class SensorGameToLose : ISensor
 {
-	// private readonly DateTime _timeTemp = DateTime.UtcNow;
+	private readonly DateTime _timeTemp = DateTime.UtcNow;
 
 	public bool Check(IProvider provider)
 	{
@@ -121,7 +123,10 @@ public class SensorGameToLose : ISensor
 		// 	DateTime.UtcNow - _timeTemp > TimeSpan.FromSeconds(ScreensFsm.GAME_MAX_TIME_F) &&
 		// 	UnityEngine.Random.value > .7f;
 
-		return provider.Get<GameController>().IsCurrentLose();
+		var game = provider.Get<GameController>();
+		return 
+			game.IsCurrentLose() ||
+			game.GetCurrentDuration() > TimeSpan.FromSeconds(ScreensFsm.GAME_MAX_TIME_F);
 	}
 
 	public IEnumerator GetNextTransition(IProvider provider)

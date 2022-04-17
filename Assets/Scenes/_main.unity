@@ -157,10 +157,10 @@ RectTransform:
   m_Father: {fileID: 1631191275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 129}
-  m_SizeDelta: {x: 480, y: 146}
+  m_AnchorMin: {x: 0.2, y: 0.58937645}
+  m_AnchorMax: {x: 0.8, y: 0.8278707}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130305101
 MonoBehaviour:
@@ -542,7 +542,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B"
+  m_Text: Score
 --- !u!222 &487444278
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -583,10 +583,10 @@ RectTransform:
   m_Father: {fileID: 1489803642}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 59}
-  m_SizeDelta: {x: 480, y: 146}
+  m_AnchorMin: {x: 0, y: 0.47573018}
+  m_AnchorMax: {x: 1, y: 0.71273005}
+  m_AnchoredPosition: {x: 0, y: 1}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &533723715
 MonoBehaviour:
@@ -621,7 +621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u043B\u0438"
+  m_Text: You'v lost
 --- !u!222 &533723716
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -662,10 +662,10 @@ RectTransform:
   m_Father: {fileID: 163848075}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -38}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 0.35712928}
+  m_AnchorMax: {x: 1, y: 0.521}
+  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &575969330
 MonoBehaviour:
@@ -689,10 +689,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 42
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 84
     m_Alignment: 4
     m_AlignByGeometry: 1
@@ -700,8 +700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u0440\u0435\u043C\u044F \u043F\u0440\u0435\u0434\u0438\u0434\u0443\u0449\u0435\u0439
-    \u0438\u0433\u0440\u044B"
+  m_Text: 
 --- !u!222 &575969331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -741,7 +740,7 @@ Transform:
   - {fileID: 1999758352}
   - {fileID: 1627109231}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &609696818
 MonoBehaviour:
@@ -885,10 +884,10 @@ RectTransform:
   m_Father: {fileID: 2123908285}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 129}
-  m_SizeDelta: {x: 480, y: 146}
+  m_AnchorMin: {x: 0, y: 0.5908821}
+  m_AnchorMax: {x: 1, y: 0.829635}
+  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726931016
 MonoBehaviour:
@@ -923,7 +922,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u044B \u0432\u044B\u0438\u0433\u0440\u0430\u043B\u0438"
+  m_Text: You win
 --- !u!222 &726931017
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -966,10 +965,10 @@ RectTransform:
   m_Father: {fileID: 1631191275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: -120}
-  m_SizeDelta: {x: 480, y: 146}
+  m_AnchorMin: {x: 0.2, y: 0.18811794}
+  m_AnchorMax: {x: 0.8, y: 0.4221293}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_SizeDelta: {x: 0, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &778672404
 MonoBehaviour:
@@ -1085,10 +1084,10 @@ RectTransform:
   m_Father: {fileID: 2123908285}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -39}
-  m_SizeDelta: {x: 480, y: 146}
+  m_AnchorMin: {x: 0, y: 0.31812927}
+  m_AnchorMax: {x: 1, y: 0.5535171}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871310680
 MonoBehaviour:
@@ -1112,10 +1111,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 58
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 84
     m_Alignment: 4
     m_AlignByGeometry: 1
@@ -1164,10 +1163,10 @@ RectTransform:
   m_Father: {fileID: 163848075}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 67}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 0.5291293}
+  m_AnchorMax: {x: 1, y: 0.68836504}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969856315
 MonoBehaviour:
@@ -1191,10 +1190,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 42
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 84
     m_Alignment: 4
     m_AlignByGeometry: 1
@@ -1202,8 +1201,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u0440\u0435\u043C\u044F \u043F\u0440\u0435\u0434\u0438\u0434\u0443\u0449\u0435\u0439
-    \u0438\u0433\u0440\u044B"
+  m_Text: 
 --- !u!222 &969856316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1305,10 +1303,10 @@ RectTransform:
   m_Father: {fileID: 163848075}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -143}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 0.18662359}
+  m_AnchorMax: {x: 1, y: 0.34924716}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413612428
 MonoBehaviour:
@@ -1332,10 +1330,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 42
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 84
     m_Alignment: 4
     m_AlignByGeometry: 1
@@ -1343,8 +1341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u0440\u0435\u043C\u044F \u043F\u0440\u0435\u0434\u0438\u0434\u0443\u0449\u0435\u0439
-    \u0438\u0433\u0440\u044B"
+  m_Text: 
 --- !u!222 &1413612429
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1423,7 +1420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0418\u0433\u0440\u0430\u0442\u044C"
+  m_Text: Play
 --- !u!222 &1422082358
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1586,7 +1583,7 @@ Transform:
   m_LocalScale: {x: 65.961, y: 65.961, z: 65.961}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1489803641
 GameObject:
@@ -1956,10 +1953,10 @@ RectTransform:
   m_Father: {fileID: 163848075}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 171}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 0.6981406}
+  m_AnchorMax: {x: 1, y: 0.860118}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860926488
 MonoBehaviour:
@@ -1983,10 +1980,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 42
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 84
     m_Alignment: 4
     m_AlignByGeometry: 1
@@ -1994,8 +1991,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u0440\u0435\u043C\u044F \u043F\u0440\u0435\u0434\u0438\u0434\u0443\u0449\u0435\u0439
-    \u0438\u0433\u0440\u044B"
+  m_Text: 
 --- !u!222 &1860926489
 CanvasRenderer:
   m_ObjectHideFlags: 0

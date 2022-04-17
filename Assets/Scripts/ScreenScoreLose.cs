@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Modules.Engine.Runtime.Extensions;
 using UnityEngine;
 
 public class ScreenScoreLose : MonoBehaviour, IScreen

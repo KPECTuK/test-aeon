@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScreensFsm : MonoBehaviour, IProvider
 {
 	public const double TRANSITION_TIME_DEFAULT_SEC = 0.3;
-	public const double GAME_MAX_TIME_F = 3.0;
+	public const double GAME_MAX_TIME_F = 30f;
 
 	[SerializeField]
 	private ScreenMain _scrMain;
@@ -42,7 +42,7 @@ public class ScreensFsm : MonoBehaviour, IProvider
 
 		if(result == null)
 		{
-			throw new Exception($"type is not found: {typeof(T)}");
+			throw new Exception($"type not found: {typeof(T)}");
 		}
 
 		return result;
@@ -52,17 +52,17 @@ public class ScreensFsm : MonoBehaviour, IProvider
 	{
 		// topmost (all got initialized)
 
-		var providerInput = new InputProvider();
+		var providerInput = new ProviderInput();
 		_repo = new Dictionary<Type, object>
 		{
 			{ typeof(IInput), providerInput },
-			{ typeof(InputProvider), providerInput },
+			{ typeof(ProviderInput), providerInput },
 			//
-			{ typeof(GameModeResetPosition), new GameModeResetPosition() },
-			{ typeof(GameModeResetControl), new GameModeResetControl() },
-			{ typeof(GameModeMain), new GameModeMain() },
-			{ typeof(GameModeInertia), new GameModeInertia() },
-			{ typeof(GameModeFalling), new GameModeFalling() },
+			{ typeof(GameModeResetChar), new GameModeResetChar() },
+			{ typeof(GameModeSelectFinish), new GameModeSelectFinish() },
+			{ typeof(GameModeDriveChar), new GameModeDriveChar() },
+			{ typeof(GameModeInertiaChar), new GameModeInertiaChar() },
+			{ typeof(GameModeFallChar), new GameModeFallChar() },
 			{ typeof(GameModeUI), new GameModeUI() },
 			//
 			{ typeof(GameController), new GameController() },

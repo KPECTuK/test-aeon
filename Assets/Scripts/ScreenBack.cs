@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Modules.Engine.Runtime.Extensions;
 using UnityEngine;
 
 public class ScreenBack : MonoBehaviour, IScreen

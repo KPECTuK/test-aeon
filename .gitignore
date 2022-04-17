@@ -25,7 +25,7 @@
 [Xx]86/
 !**/Plugins/**/[Xx]86/
 [Cc]ache/
-[Bb]uild/
+# [Bb]uild/
 bld/
 
 # NuGet Packages Directory
