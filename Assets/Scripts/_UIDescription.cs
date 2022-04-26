@@ -114,7 +114,7 @@ public class SensorWinToMain : ISensor
 
 public class SensorGameToLose : ISensor
 {
-	private readonly DateTime _timeTemp = DateTime.UtcNow;
+	// private readonly DateTime _timeTemp = DateTime.UtcNow;
 
 	public bool Check(IProvider provider)
 	{
@@ -123,10 +123,7 @@ public class SensorGameToLose : ISensor
 		// 	DateTime.UtcNow - _timeTemp > TimeSpan.FromSeconds(ScreensFsm.GAME_MAX_TIME_F) &&
 		// 	UnityEngine.Random.value > .7f;
 
-		var game = provider.Get<GameController>();
-		return 
-			game.IsCurrentLose() ||
-			game.GetCurrentDuration() > TimeSpan.FromSeconds(ScreensFsm.GAME_MAX_TIME_F);
+		return provider.Get<GameController>().IsCurrentLose();
 	}
 
 	public IEnumerator GetNextTransition(IProvider provider)
